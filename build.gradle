@@ -12,7 +12,7 @@ subprojects {
         mavenLocal()
         mavenCentral()
         maven {
-            url 'http://nexus.juanpi.org/content/groups/public/'
+            url 'http://nikai.net.cn/content/groups/public/'
         }
     }
     dependencies {
