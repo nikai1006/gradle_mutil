@@ -8,3 +8,12 @@ repositories {
 
 dependencies {
 }
+
+//自定义任务
+task makeWebDir() {
+    dependsOn 'makeJavaDir'
+    def paths = ['src/main/webapp']
+    doLast {
+        paths.forEach(createDir)
+    }
+}
