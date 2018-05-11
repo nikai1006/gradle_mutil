@@ -1,6 +1,34 @@
 //group 'cn.net.nikai.gradle'
 //version '1.0-SNAPSHOT'
 
+/**
+ * <pre>
+ *  gradle是由groovy语言编写的，支持groovy语法，可以灵活的使用已有的各种ant插件、基于jvm的类库，
+ *  这也是它比maven、ant等构建脚本强大的原因。
+ *  虽然gradle支持开箱即用，但是如果你想在脚本中使用一些第三方的插件、类库等，
+ *  就需要自己手动添加对这些插件、类库的引用。而这些插件、类库又不是直接服务于项目的，
+ *  而是支持其它build脚本的运行。所以你应当将这部分的引用放置在buildscript代码块中。
+ *  gradle在执行脚本时，会优先执行buildscript代码块中的内容，然后才会执行剩余的build脚本。
+ *  <pre>
+ */
+buildscript {
+
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+
+    dependencies {
+        classpath "gradle.plugin.install4j.install4j:gradle_plugin:7.0.5"
+    }
+}
+
+plugins {
+    id "com.install4j.gradle" version "7.0.5"
+}
+apply plugin: "com.install4j.gradle"
 
 allprojects {
     apply plugin: 'java'
