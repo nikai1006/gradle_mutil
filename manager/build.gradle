@@ -2,5 +2,5 @@ repositories {
 }
 
 dependencies {
-    compile project(':service')
+    compile project(":service")
 }
