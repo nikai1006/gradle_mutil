@@ -1,13 +1,6 @@
-group 'cn.net.nikai.gradle'
-version '1.0-SNAPSHOT'
+//group 'cn.net.nikai.gradle'
+//version '1.0-SNAPSHOT'
 
-def createDir = {
-    path ->
-        File dir = new File(path)
-        if (!dir.exists())
-            dir.mkdirs()
-
-}
 
 allprojects {
     apply plugin: 'java'
@@ -25,6 +18,15 @@ subprojects {
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
         compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    }
+
+
+    def createDir = {
+        path ->
+            File dir = new File(path)
+            if (!dir.exists())
+                dir.mkdirs()
+
     }
 
     //自定义任务

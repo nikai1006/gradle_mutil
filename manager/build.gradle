@@ -1,11 +1,6 @@
-group 'cn.net.nikai.gradle'
-version '1.0-SNAPSHOT'
-
-
-
 repositories {
 }
 
 dependencies {
-    compile ':service'
+    compile project(':service')
 }
