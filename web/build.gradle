@@ -1,0 +1,10 @@
+group 'cn.net.nikai.gradle'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+
+repositories {
+}
+
+dependencies {
+}

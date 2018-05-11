@@ -1,1 +1,5 @@
-rootProject.name= 'multi'
+rootProject.name = 'multi'
+include 'service'
+include 'web'
+include 'manager'
+

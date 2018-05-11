@@ -1,0 +1,8 @@
+group 'cn.net.nikai.gradle'
+version '1.0-SNAPSHOT'
+
+repositories {
+}
+
+dependencies {
+}
