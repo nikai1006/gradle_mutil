@@ -3,11 +3,27 @@
 
 
 allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            myPublish(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            maven {
+                name "myRepo"
+                url "http://nikai.net.cn/content/groups/public/"
+            }
+        }
+    }
 }
 
 subprojects {
-    apply plugin: 'java'
-    sourceCompatibility = 1.8
 
     repositories {
         mavenLocal()
