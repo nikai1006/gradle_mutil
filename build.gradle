@@ -9,11 +9,13 @@
  *  就需要自己手动添加对这些插件、类库的引用。而这些插件、类库又不是直接服务于项目的，
  *  而是支持其它build脚本的运行。所以你应当将这部分的引用放置在buildscript代码块中。
  *  gradle在执行脚本时，会优先执行buildscript代码块中的内容，然后才会执行剩余的build脚本。
+ *  <a href="https://blog.csdn.net/zcl_love_wx/article/details/62238423">参考文献</a>
  *  <pre>
  */
 buildscript {
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven {
             url 'https://plugins.gradle.org/m2/'
@@ -22,8 +24,10 @@ buildscript {
 
     dependencies {
         classpath "gradle.plugin.install4j.install4j:gradle_plugin:7.0.5"
+        classpath 'org.apache.commons:commons-csv:1.0'
     }
 }
+
 
 plugins {
     id "com.install4j.gradle" version "7.0.5"
@@ -74,6 +78,7 @@ subprojects {
 
     }
 
+
     //自定义任务
     task makeJavaDir() {
         def paths = ['src/main/java', 'src/main/resources', 'src/test/java', 'src/test/resources']
@@ -81,8 +86,6 @@ subprojects {
             paths.forEach(createDir)
         }
     }
-
-
 }
 
 
